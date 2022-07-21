@@ -1,0 +1,21 @@
+#QPlot Assignment
+
+# Create a scatterplot with values for x and y
+x<-(2,3,5,7,10)
+y<-(1,1,2,5,9)
+qplot(x,y)
+# Create a histogram using the roll dice function to show frequency of rolls
+randomdice<-c(2,2,3,5,7)
+qplot(randomdice, binwidth=1)
+actualdicerolls<-replicate(100,roll())
+qplot(actualdicerolls, binwidth=1)
+# Create a histogram adding weights to the dice values by setting the prob argument within the sample method
+roll<-function(){
+  dice<-1:6
+  result<- sample(x=dice,size=2,replace= TRUE， prob=c(2,3,4))
+  sum(result)
+}
+roll()
+dice<-1:6
+geom histogram(dice)
+
